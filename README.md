@@ -5,6 +5,9 @@ Genetic determinants Underlying Cell-Cell Interaction (GUCCI) model to identify 
 ## Overview 
 This repository implements the **GUCCI framework** for identifying cell–cell interaction QTLs by integrating single-cell RNA-seq data with bulk eQTL datasets. It provides code to perform non-negative least squares to infer cell type proportion weights, as well as for the main model to refine the joint beta and standard error estimates. 
 
+Step 1: Generate cell type proportion weights.  
+Step 2: Run GUCCI to integrate bulk, sc and cci-QTLs together to refine effect sizes. 
+
 
 ## Data Usage
 - eQTLGen: https://www.eqtlgen.org
