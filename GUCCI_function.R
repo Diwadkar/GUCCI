@@ -40,7 +40,7 @@ refine.cci <- function(bt,se,weight,omega) {
     omega <- ginv(diag(se)%*%omega%*%diag(se))
 
     A <- diag(length(b)-1)
-    A <- matrix(unlist(rbind(A,weight)),ncol=length(b)-1)
+    A <- matrix(unlist(rbind(weight,A)),ncol=length(b)-1)
 
     #Generate beta and covariance matrix
     beta <- ginv(t(A)%*%omega%*%A)%*%t(A)%*%omega%*%unlist(b)
