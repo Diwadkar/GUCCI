@@ -1,11 +1,9 @@
 library(rareGWAMA);
 library(pracma)
 
-eqtl <- as.data.frame(fread(file='/storage/group/dxl46/default/private/dajiang/projects/cci/merged.sc.bk.eqtl.genename.txt',header=T));
+get_weights <- function(betas, ses){
 
 #Filter beta and SE are remove any NAs
-betas <- eqtl[,8:22];
-ses <- eqtl[,23:37];
 ix.keep <- which(rowSums(is.na(betas))==0);
 betas.nona <- betas[ix.keep,];
 ses.nona <- ses[ix.keep,];
@@ -28,7 +26,9 @@ frac <- lsqlincon(matrix(unlist(betas.nona[,-1]),nrow=nrow(betas.nona),ncol=ncol
 
 
 ## Generate dataframe with weights
-frac <- t(as.data.frame(frac))
-colnames(frac) <- gsub("BETA_","",colnames(betas)[-1])
-weight <- frac
-write.table(weight, "merged.sc.bk.eqtl.genename.full.weights.txt", sep="\t", quote=F, row.names=F)
+weights <- t(as.data.frame(frac))
+colnames(weights) <- gsub("BETA_","",colnames(betas)[-1])
+return(weights)
+
+}  
+
