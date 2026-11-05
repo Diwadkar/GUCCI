@@ -21,11 +21,11 @@ weights <- get_weights(beta, se)
 
 ### Step 2: Refine effect size estimates and identify cci-QTLs
 
-The GUCCI model requires genotype–expression association summary statistics obtained from linear regression, with receptor gene expression as the outcome and genotype as the predictor, adjusting for relevant covariates.
+The GUCCI model requires genotype-expression association summary statistics obtained from linear regression, with receptor gene expression as the outcome and genotype as the predictor, adjusting for relevant covariates.
 
-Association analyses should be performed separately after stratifying individuals based on the expression levels of the corresponding ligand gene. Users can specify a single ligand expression threshold or evaluate multiple thresholds, as implemented in the published manuscript using percentiles ranging from the 10th to the 90th percentile.
+Perform association analyses separately after stratifying individuals by the expression level of the corresponding ligand gene. Users can specify a single ligand expression threshold or evaluate multiple thresholds, as implemented in the published manuscript using percentiles ranging from the 10th to the 90th percentile.
 
-GUCCI integrates bulk and cell-type-specific eQTL summary statistics to refine genetic effect size estimates and identify cell–cell interaction QTLs (cci-QTLs).
+GUCCI integrates bulk and cell-type-specific eQTL summary statistics to refine genetic effect size estimates and identify cell-cell interaction QTLs (cci-QTLs).
 
 **Parameters:**
 - `beta`: A numeric vector of length `k + 1` containing the estimated genetic effect sizes from bulk tissue and `k` cell types for the ligand–receptor pair of interest.
