@@ -1,8 +1,10 @@
 ## Function
-refine.cci <- function(bt,se,weight,omega) {
+refine.cci <- function(bt,se,weight) {
   ## b = A*beta + e;
 
+  
   # Set beta and SE
+  omega <- diag(length(bt))
   b <- as.vector(bt)
   beta.out <- rep(NA,length(b)-1)
   se <- as.vector(se)
