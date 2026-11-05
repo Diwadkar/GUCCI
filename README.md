@@ -1,7 +1,7 @@
 # GUCCI
 Genetic determinants Underlying Cell-Cell Interaction (GUCCI) model to identify cell-cell interaction QTLs (cci-QTLs)
 
-This repository provides an implementation of the GUCCI framework for identifying cell–cell interaction quantitative trait loci (cci-QTLs) by integrating single-cell RNA sequencing (scRNA-seq) and bulk eQTL summary statistics. GUCCI leverages information across cell types to refine genetic effect size estimates and identify genetic variants whose regulatory effects on receptor gene expression depend on the expression levels of their corresponding ligands.
+This repository provides an implementation of the GUCCI framework for identifying cell-cell interaction quantitative trait loci (cci-QTLs) by integrating single-cell RNA sequencing (scRNA-seq) and bulk eQTL summary statistics. GUCCI leverages information across cell types to refine genetic effect size estimates and identify genetic variants whose regulatory effects on receptor gene expression depend on the expression levels of their corresponding ligands.
 
 The repository includes functions to estimate cell-type weights using non-negative least squares (NNLS) and to implement the GUCCI model for jointly refining genetic effect sizes (β) and their standard errors (SEs), enabling the identification of cci-QTLs.
 
